@@ -11,7 +11,6 @@ from astroquery.jplhorizons import Horizons
 # Press ⌃R to execute it or replace it with your code.
 # Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
 
-
 def print_loc(name):
     # Use a breakpoint in the code line below to debug your script.
 
@@ -27,6 +26,8 @@ def print_loc(name):
 
         print(mars)
 
+def reading_tiffs():
+    pass
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
