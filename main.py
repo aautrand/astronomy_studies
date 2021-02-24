@@ -1,11 +1,12 @@
 import datetime
 
-from astropy.time import Time
+from astropy.io import fits
 from astropy.coordinates import solar_system_ephemeris, EarthLocation
 from astropy.coordinates import get_body
-from PIL import Image
-
+from astropy.time import Time
 from astroquery.jplhorizons import Horizons
+import matplotlib.pyplot as plt
+
 # This is a sample Python script.
 
 # Press ⌃R to execute it or replace it with your code.
@@ -28,14 +29,22 @@ def print_loc(name):
         print(mars)
 
 
-def reading_tiffs():
-    img = Image.open("MSL_Gale_Orthophoto_Mosaic_25cm_v3.tif")
-    img.show()
-    pass
+def reading_fits():
+    """current getting fits from: https://pdsimage2.wr.usgs.gov/archive/lro-l-lamp-2-edr-v1.0/LROLAM_0001/DATA/2009187/
+    This function was originally for tifs but couldnt fund much data from nasa and pds to warrant spending the time
+    trying to decifer tifs.
 
+    Cant open files. Why? had to move the file to the same directory as the app.
+
+    """
+    # https://pillow.readthedocs.io/en/stable/reference/Image.html
+
+    f = fits.open("LAMP_ENG_0268577238_02.fit")
+    print(f.info())
+    #next is how to display a fits img.
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     # >print_loc('Astronomy!')
-    reading_tiffs()
+    reading_fits()
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
