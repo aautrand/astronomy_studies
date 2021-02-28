@@ -41,7 +41,9 @@ def reading_fits():
 
     f = fits.open("LAMP_ENG_0268577238_02.fit")
     print(f.info())
+    print(f[0])
     #next is how to display a fits img.
+
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
